@@ -1,39 +1,31 @@
 window.onload=function(){
-  var search = document.querySelector("input[type='text']");
-  var link = document.querySelector("#link");
-  var content = document.querySelector("#content");
+  var search = document.querySelector("#search div");
   var button = document.querySelector("input[type='button']");
-  var img = document.querySelector("#search img");
+  var img = document.querySelector("#search div img");
+  var input = document.querySelector("input[type='text']");
   search.addEventListener("touchstart",function(){
-    link.style.display="none";
-    content.style.display="none"
-    button.style="display:inline-block;position:relative;top:0.2vh;margin-top:3%;margin-left:0;margin-right:5%;width:15%;height:80%;background-color:skyblue;color:white;";
-    search.placeholder="请输入关键字";
-    search.style.height="80%";
-    img.style.top="0.5vh";
-    search.style.width="70%";
+    search.className="clickClass";
+    img.className="clickImg";
+    button.className="clickOne";
+    input.placeholder="请输入关键字";
   },false)
-  search.addEventListener("input",function(event){
-    if(search.value[0]!==" ")
+  input.addEventListener("input",function(event){
+    if(input.value[0]!==" ")
     {
-      search.value="      "+search.value;
+      input.value="      "+input.value;
     }
-    if(search.value.length<"      ".length&&!search.value.match(/\S/g))
+    if(input.value.length<"      ".length&&!input.value.match(/\S/g))
       {
-        search.value="      "+search.value;
-        search.value=search.value.substr(0,"      ".length);
+        input.value="      "+input.value;
+        input.value=input.value.substr(0,"      ".length);
       }
-    setTimeout(function(){search.setSelectionRange(search.value.length,search.value.length)},5);
+    setTimeout(function(){input.setSelectionRange(input.value.length,input.value.length)},5);
   },false)
-  search.addEventListener("blur",function(){
-    link.style.display="block";
-    content.style.display="block"
-    search.placeholder="搜索";
-    button.style.display="none";
-    search.style.width="90%";
-    search.style.height="60%";
-    img.style.top="0.4vh";
-    if(search.value==="      ")
-      search.value="";
+  input.addEventListener("blur",function(){
+    search.className="initialClass";
+    img.className="initialImg";
+    button.className="initialOne";
+    if(input.value==="      ")
+      input.value="";
   },false)
 }
