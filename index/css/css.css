@@ -53,9 +53,6 @@ a{
   top: 10%;
   z-index: 100;
   background-color:#fafafa;
-  /* display: flex;
-  align-items:center;
-  justify-content: center; */
 }
 .contianer{
   width: 90%;
@@ -176,7 +173,7 @@ top:2%;
   max-width:40%;
   left: 60vw;
 }
-#left{
+.left{
   width: 9vw;
   height: auto;
   margin-top: 1.3vh;
@@ -189,7 +186,7 @@ top:2%;
   max-width:9vmin;
   max-height:9vmin;
 }
-#right{
+.right{
   width: 85vw;
   height: auto;
   display: flex;
@@ -225,7 +222,14 @@ top:2%;
   align-items: center;
   font-size: 1.8vh;
 }
-
+.otherBottomText{
+  width: 100%;
+  height: 4vh;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 1.8vh;
+}
 .time{
   width: 50%;
   font-weight: 100;
@@ -233,6 +237,12 @@ top:2%;
   text-align: left;
   position: relative;
   left: -5.5vw;
+}
+.otherTime{
+  width: 50%;
+  font-weight: 100;
+  color: #676767;
+  text-align: left;
 }
 .edit{
   width: 10%;
