@@ -14,11 +14,12 @@ window.onload=function(){
     button.className="clickOne";
     setTimeout(function(){
       button.style.display="block";
-    },50);
+    },100);
   },false)
-
   input.addEventListener("blur",function(){
+    if(input.value===""){
     img.className="initialImg";
+  }
     input.placeholder="搜索";
     searchDiv.className="initialClass";
     search.className="initialSearch";
